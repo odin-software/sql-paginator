@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func GetPageAndLimitParams(r *http.Request) (int, int, error) {
+func GetPageAndLimitParams(r *http.Request) (int, int) {
 	page := 1
 	limit := 10
 
@@ -19,5 +19,5 @@ func GetPageAndLimitParams(r *http.Request) (int, int, error) {
 		limit, _ = strconv.Atoi(limitStr)
 	}
 
-	return page, limit, nil
+	return page, limit
 }
